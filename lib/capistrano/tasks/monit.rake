@@ -34,6 +34,14 @@ namespace :sidekiq do
         mv_command = "mv #{fetch(:tmp_dir)}/monit.conf #{fetch(:sidekiq_monit_conf_dir)}/#{sidekiq_service_name}.conf"
         sudo_if_needed mv_command
 
+        invoke 'sidekiq:monit:reload'
+      end
+    end
+
+    desc 'Reload monit processess and configruaton'
+    task :reload do
+      on roles(fetch(:sidekiq_roles)) do
+        sudo_if_needed "systemctl reload monit.service"
         sudo_if_needed "#{fetch(:monit_bin)} reload"
       end
     end
