@@ -41,7 +41,6 @@ namespace :sidekiq do
     desc 'Reload monit processess and configruaton'
     task :reload do
       on roles(fetch(:sidekiq_roles)) do
-        sudo_if_needed "systemctl reload monit.service"
         sudo_if_needed "#{fetch(:monit_bin)} reload"
       end
     end
