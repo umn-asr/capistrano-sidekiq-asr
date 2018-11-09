@@ -35,6 +35,13 @@ namespace :sidekiq do
         mv_command = "mv #{fetch(:tmp_dir)}/monit.conf #{fetch(:sidekiq_monit_conf_dir)}/#{fetch(:sidekiq_monit_conf_file)}"
         sudo_if_needed mv_command
 
+        invoke 'sidekiq:monit:reload'
+      end
+    end
+
+    desc 'Reload monit processess and configruaton'
+    task :reload do
+      on roles(fetch(:sidekiq_roles)) do
         sudo_if_needed "#{fetch(:monit_bin)} reload"
       end
     end
@@ -42,11 +49,11 @@ namespace :sidekiq do
     desc 'Monitor Sidekiq monit-service'
     task :monitor do
       on roles(fetch(:sidekiq_roles)) do
+        invoke 'sidekiq:monit:config'
         fetch(:sidekiq_processes).times do |idx|
           begin
             sudo_if_needed "#{fetch(:monit_bin)} monitor #{sidekiq_service_name(idx)}"
           rescue
-            invoke 'sidekiq:monit:config'
             sudo_if_needed "#{fetch(:monit_bin)} monitor #{sidekiq_service_name(idx)}"
           end
         end
