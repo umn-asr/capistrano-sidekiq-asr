@@ -1,6 +1,6 @@
-[![Gem Version](https://badge.fury.io/rb/capistrano-sidekiq.svg)](http://badge.fury.io/rb/capistrano-sidekiq)
+# Capistrano::Sidekiq - ASR
 
-# Capistrano::Sidekiq
+This code originated at [https://github.com/seuros/capistrano-sidekiq](https://github.com/seuros/capistrano-sidekiq) but after not getting bug-fixing PRs merged we (ASR Custom Solutions) created our own version of the gem that we maintain.
 
 Sidekiq integration for Capistrano
 
@@ -8,11 +8,11 @@ Sidekiq integration for Capistrano
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+    gem 'capistrano-sidekiq-asr'
 
 or:
 
-    gem 'capistrano-sidekiq', group: :development
+    gem 'capistrano-sidekiq-asr', group: :development
 
 And then execute:
 
