@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'capistrano/sidekiq/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'capistrano-sidekiq'
+  spec.name = 'capistrano-sidekiq-asr'
   spec.version = Capistrano::SidekiqVERSION
   spec.authors = ['Abdelkader Boudih', 'ASR Custom Solutions']
   spec.email = ['terminale@gmail.com', 'asrwebteam@umn.edu']
