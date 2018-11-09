@@ -6,11 +6,11 @@ require 'capistrano/sidekiq/version'
 Gem::Specification.new do |spec|
   spec.name = 'capistrano-sidekiq'
   spec.version = Capistrano::SidekiqVERSION
-  spec.authors = ['Abdelkader Boudih']
-  spec.email = ['terminale@gmail.com']
+  spec.authors = ['Abdelkader Boudih', 'ASR Custom Solutions']
+  spec.email = ['terminale@gmail.com', 'asrwebteam@umn.edu]
   spec.summary = %q{Sidekiq integration for Capistrano}
   spec.description = %q{Sidekiq integration for Capistrano}
-  spec.homepage = 'https://github.com/seuros/capistrano-sidekiq'
+  spec.homepage = 'https://github.com/umn-asr/capistrano-sidekiq-asr'
   spec.license = 'LGPL-3.0'
 
   spec.required_ruby_version     = '>= 2.0.0'
